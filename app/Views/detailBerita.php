@@ -87,12 +87,12 @@
 
     <!-- Artikel  -->
     <div class="container mx-auto mt-5 mb-5 news" style="border: 2px solid rgb(241,243,255);">
-      <h3 class="text-center" style="border-bottom: 3px solid #f1f3ff;">Judul Berita</h3>
+      <h3 class="text-center" style="border-bottom: 3px solid #f1f3ff;"><?= $artikel['judul'];?></h3>
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8 text-center">
-          <img src="./assets/images/bakso.jpg" alt="" class="mt-5" style="border: 20px solid #f1f3ff; border-radius: 20px;">
-          <p style="text-align: justify;" class="mt-4">isi berita Detail</p>
+          <img src="./assets/images/<?= $artikel['gambar'];?>" alt="" class="mt-5" style="border: 20px solid #f1f3ff; border-radius: 20px;">
+          <p style="text-align: justify;" class="mt-4"><?= $artikel['isi'];?></p>
         </div>
         <div class="col-2"></div>
     </div>    

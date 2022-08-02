@@ -46,6 +46,11 @@ $routes->get('/profil', 'Home::profil');
 $routes->post('/login', 'Login::index');
 $routes->post('/admin', 'Admin::index');
 $routes->get('/tambah', 'Admin::tambah');
+$routes->get('/edit/(:segment)', 'Admin::edit/$1');
+$routes->post('/update/(:segment)', 'Admin::update/$1');
+$routes->post('/save', 'Admin::save');
+$routes->get('/artikel/(:segment)', 'Home::detailBerita/$1');
+$routes->get('/delete/(:segment)', 'Admin::delete/$1');
 
 /*
  * --------------------------------------------------------------------

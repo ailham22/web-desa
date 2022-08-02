@@ -33,7 +33,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg main-nav">
       <div class="container">
-        <a class="navbar-brand" href="#" style="color: black;"
+        <a class="navbar-brand" href="<?= base_url('');?>" style="color: black;"
           ><img
             src="./assets/images/logo_tanggamus-remove.png"
             alt=""
@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse menu-nav" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#OurServices">Beranda</a>
+              <a class="nav-link" href="admin">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn btn-primary" href="<?= base_url('logout')?>">Keluar</a>
@@ -71,22 +71,20 @@
     <tr>
       <th scope="col">No</th>
       <th scope="col">Judul Artikel</th>
-      <th scope="col">Rev</th>
-      <th scope="col">Gambar</th>
-      <th scope="col">Tanggal terbit</th>
+      <th scope="col">slug </th>
       <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
+    <?php $i =1;?>
+  <?php foreach($artikel as $artikel) :?>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>asdasd</td>
-      <td>22 Februari 2022</td>
-      <td>Edit | Hapus</td>
+        <th scope="row"><?= $i++;?></th>
+        <td><?= $artikel['judul'];?></td>
+        <td><?= $artikel['slug'];?></td>
+        <td><a href="<?= base_url("edit/".$artikel['id']);?>">Edit</a>  | <a href="<?= base_url("delete/".$artikel['id']);?>">Hapus</a> </td>
     </tr>
-    
+    <?php endforeach;?>
   </tbody>
 </table>
         </div>

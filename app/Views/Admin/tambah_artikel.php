@@ -33,7 +33,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg main-nav">
       <div class="container">
-        <a class="navbar-brand" href="#" style="color: black;"
+        <a class="navbar-brand" href="<?= base_url('');?>" style="color: black;"
           ><img
             src="./assets/images/logo_tanggamus-remove.png"
             alt=""
@@ -46,7 +46,7 @@
         <div class="collapse navbar-collapse menu-nav" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="./admin.html">Beranda</a>
+              <a class="nav-link" href="admin">Beranda</a>
             </li>
             <li class="nav-item">
               <a class="nav-link btn btn-primary" href="login/logout">Keluar</a>
@@ -64,20 +64,23 @@
     <div class="container" style="height: 414px">
       <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8 mt-5"><form>
+        <div class="col-sm-8 mt-5">
+            
+        <form action="save" method="post" enctype="multipart/form-data">
           <div class="mb-1">
             <label for="exampleInputEmail1" class="form-label">Judul Artikel</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <input type="text" class="form-control" name="judul" id="exampleInputEmail1" aria-describedby="emailHelp">
           </div>
-          <div class="mb-1">
-            <label for="exampleInputEmail1" class="form-label">Slug</label>
-            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          </div>
+         
           <div class="form-group mb-2">
             <label for="exampleFormControlTextarea1">Isi Berita</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" name="isi" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           
+          <div class="custom-file mb-2">
+            <input type="file" name="gambar" class="custom-file-input" id="gambar">
+            <label class="custom-file-label" for="gambar">Pilih Gambar</label>
+        </div>
           
           <button type="submit" class="btn btn-primary">Submit</button>
         </form></div>

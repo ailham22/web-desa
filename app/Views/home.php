@@ -87,40 +87,30 @@
     <!-- Artikel  -->
     <div class="container-fluid mx-auto mt-5 mb-5 news">
       <h2 class="text-center">Berita Terkini Pekon kejayaan</h2>
-      <div class="row mt-5">
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/images/bakso.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="berita/detail" class="btn btn-primary ms-5">Lanjut membaca</a>
+      <div class="row mt-5 mb-5">
+
+          <?php 
+          $i = 0;
+
+          foreach($artikel as $artikel) :
+          if($i>=3){
+            break;
+          }else{
+
+          
+          ?>
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="./assets/images/<?= $artikel['gambar'];?>" class="card-img-top img-fluid" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><?= $artikel['judul'];?></h5>    
+                    <a href="/artikel/<?= $artikel['slug'];?>" class="btn btn-primary ms-5">Lanjut membaca</a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/images/bakso.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary ms-5">Lanjut membaca</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card" style="width: 18rem;">
-            <img src="./assets/images/bakso.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary ms-5">Lanjut membaca</a>
-            </div>
-          </div>
-        </div>
+        <?php 
+        $i++;}
+    endforeach;?>
     </div>    
      
 </div>
